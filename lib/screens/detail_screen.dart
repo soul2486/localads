@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:localads/screens/chat_screen_accueil.dart';
+import 'package:localads/screens/home_screen.dart';
+import 'package:localads/screens/profile_screen.dart';
 
 class Details extends StatelessWidget {
   const Details({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    final List<Widget> screensList = [
+      Home(),
+      Chat(),
+      Details(),
+      Profile(),
+    ];
     return Scaffold(
       floatingActionButton: Container(),
       backgroundColor: Colors.white,
@@ -59,7 +69,7 @@ class Details extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Montrer Suisse 2022 ",
+                      "Montre Suisse 2022 ",
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
@@ -381,7 +391,15 @@ class Details extends StatelessWidget {
           )
         ],
       )),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar( onTap: (value) {
+        
+        Navigator.push(
+          context,
+           MaterialPageRoute(builder: (context) => screensList[value],
+           ),
+           );
+      },
+      
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
         unselectedLabelStyle: const TextStyle(

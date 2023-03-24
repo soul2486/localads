@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "140360689927",
+    "project_id": "localads-a2215",
+    "storage_bucket": "localads-a2215.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140360689927:android:ba8adaf39541a9c0f13da2",
+        "android_client_info": {
+          "package_name": "com.example.localads"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140360689927-8st5klnhhgejnhq1i82dsato030eqmbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwUJGRZA9t_-B7NUIo2g73tPosyr0Y0ak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140360689927-8st5klnhhgejnhq1i82dsato030eqmbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
