@@ -12,8 +12,8 @@ class Details extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final List<Widget> screensList = [
-      Home(),
-      Chat(),
+      Home_sceen(),
+      Chat_screen(),
       Details(),
       Profile(),
     ];
