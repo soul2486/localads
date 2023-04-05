@@ -10,7 +10,7 @@ class customButton extends StatelessWidget {
       {super.key,
       required this.onclick,
       required this.elementChild,
-      this.colorBack = const Color.fromARGB(255, 252, 249, 249),
+      this.colorBack = secondaryColor,
       this.colorText = textWhite});
 
   @override

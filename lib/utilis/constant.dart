@@ -9,4 +9,4 @@ var normal = TextStyle(
 var text1 = TextStyle(fontSize: 22, fontWeight: FontWeight.bold);
 const Color textWhite = Colors.white;
 const Color secondaryColor = Color.fromARGB(255, 90, 120, 250);
-const Color secondaryColorOpacity = Color.fromARGB(33, 153, 171, 250);
+const Color secondaryColorOpacity = Color.fromARGB(69, 155, 172, 250);

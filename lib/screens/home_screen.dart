@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:localads/provider/auth_provider.dart';
+import 'package:localads/screens/publish_screen.dart';
 import 'package:localads/screens/splash_screen.dart';
 import 'package:localads/utilis/constant.dart';
+import 'package:localads/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -53,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundImage: NetworkImage(
                 ap.userModel.profilePic,
               ),
-              radius: 50,
+              radius: 70,
             ),
             SizedBox(
               height: 20,
@@ -64,6 +66,17 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(ap.userModel.phoneNumber),
             Text(ap.userModel.createdAd),
             Text(ap.userModel.uid),
+            SizedBox(
+              height: 30,
+            ),
+            customButton(
+                onclick: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddAds(),
+                          fullscreenDialog: true),
+                    ),
+                elementChild: Text("Ajouter")),
           ],
         ),
       ),
