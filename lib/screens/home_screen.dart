@@ -1,20 +1,27 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:localads/screens/chat_screen_accueil.dart';
 import 'package:localads/screens/detail_screen.dart';
+import 'package:localads/screens/profile_screen.dart';
+import 'package:localads/screens/search_screen.dart';
+import 'package:flutter/cupertino.dart';
 
-class Home_sceen extends StatelessWidget {
+class Home_sceen extends StatefulWidget {
+  @override
+  State<Home_sceen> createState() => _Home_sceenState();
+}
+
+class _Home_sceenState extends State<Home_sceen> {
+  int SelectPages = 0;
+  final _pageNo = [Home_sceen(), Chat_screen(), Profile(), search()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        leading: Icon(
-          Icons.list,
-          size: 35,
-          // color: Colors.black,
-        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -36,6 +43,31 @@ class Home_sceen extends StatelessWidget {
             ),
           )
         ],
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 3,
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 90, 120, 250),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(25.5),
+                      bottomRight: Radius.circular(25.5))),
+            ),
+            Expanded(child: Column()),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 50,
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 90, 120, 250),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25.5),
+                      topRight: Radius.circular(25.5))),
+            )
+          ],
+        ),
       ),
       body: Container(
         color: Color.fromARGB(255, 255, 255, 255),
@@ -301,7 +333,7 @@ class Home_sceen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/images/montre1.jpg'),
+                      image: AssetImage('assets/img/montre1.jpg'),
                       fit: BoxFit.cover),
                 ),
                 child: Column(
@@ -404,44 +436,58 @@ class Home_sceen extends StatelessWidget {
         ),
         backgroundColor: Color.fromARGB(255, 90, 120, 250),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(),
-          ],
-        ),
-        height: 55,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Icon(
-              Icons.home,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Chat_screen()));
-              },
-              child: Icon(
-                Icons.chat_rounded,
-              ),
-            ),
-            Container(
-              height: 35,
-              width: 35,
-            ),
-            // Icon(
-            //   Icons.add,
-            // ),
-            Icon(
-              Icons.heart_broken_rounded,
-            ),
-            Icon(
-              Icons.person,
-            )
-          ],
-        ),
+      //   bottomNavigationBar: Container(
+      //     decoration: BoxDecoration(
+      //       color: Colors.white,
+      //       boxShadow: [
+      //         BoxShadow(),
+      //       ],
+      //     ),
+      //     height: 55,
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //       children: [
+      //         Icon(
+      //           Icons.home,
+      //         ),
+      //         InkWell(
+      //           onTap: () {
+      //             Navigator.push(context,
+      //                 MaterialPageRoute(builder: (context) => Chat_screen()));
+      //           },
+      //           child: Icon(
+      //             Icons.chat_rounded,
+      //           ),
+      //         ),
+      //         Container(
+      //           height: 35,
+      //           width: 35,
+      //         ),
+      //         // Icon(
+      //         //   Icons.add,
+      //         // ),
+      //         Icon(
+      //           Icons.heart_broken_rounded,
+      //         ),
+      //         Icon(
+      //           Icons.person,
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      bottomNavigationBar: ConvexAppBar(
+        items: [
+          TabItem(icon: Icons.home, title: 'Home_sceen'),
+          TabItem(icon: Icons.favorite, title: 'Chat_screen'),
+          TabItem(icon: Icons.add, title: 'Profile'),
+          TabItem(icon: Icons.person, title: 'search'),
+        ],
+        initialActiveIndex: SelectPages,
+        onTap: (int index) {
+          setState(() {
+            SelectPages = index;
+          });
+        },
       ),
     );
   }

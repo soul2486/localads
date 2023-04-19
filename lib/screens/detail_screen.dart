@@ -155,8 +155,8 @@ class Details extends StatelessWidget {
                   style: ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(
                         Color.fromARGB(255, 244, 54, 117)),
-                    iconColor: MaterialStatePropertyAll(Colors.white),
-                  ),
+                  //   iconColor: MaterialStatePropertyAll(Colors.white),
+                   ),
                 ),
                 ),
                 
@@ -419,7 +419,7 @@ class Details extends StatelessWidget {
             label: 'Favoris',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_2),
+            icon: Icon(Icons.favorite),
             label: 'Compte',
           ),
         ],
