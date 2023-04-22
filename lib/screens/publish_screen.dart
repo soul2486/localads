@@ -254,7 +254,7 @@ class _AddAdsState extends State<AddAds> {
                               description: adsDescription.text,
                               categorie: adsCategories,
                               imageURL: urlImage,
-                              date: Timestamp.now().toString(),
+                              date: "",
                               userId: "");
                           AnnonceService annonceService = new AnnonceService();
                           annonceService.publierAnnonce(annonce);

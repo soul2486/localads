@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:localads/models/user.dart';
 import 'package:localads/provider/auth_provider.dart';
+import 'package:localads/screens/Accueil_screen.dart';
+import 'package:localads/screens/Man.dart';
 import 'package:localads/screens/home_screen.dart';
 import 'package:localads/utilis/constant.dart';
 import 'package:localads/utilis/helpers.dart';
@@ -57,7 +59,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                 Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
                   builder: ((context) {
                     print("DEDANSSSSSS");
-                    return HomeScreen();
+                    return MyWidget();
                   }),
                 ), (route) => false)));
           });

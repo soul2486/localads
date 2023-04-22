@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   StreamBuilder(
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
                       if (snapshot.hasError) {
-                        return Text("Error $snapshot");
+                        return Text("Error ");
                       } else if (!snapshot.hasData) {
                         return CircularProgressIndicator();
                       } else {
@@ -92,21 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Column(
                         children: [
                           for (var item in listQueryDocumentSnapshot)
-                            Text(item['categorie']),
+                            Text(item['titre']),
                           SizedBox(
                             height: 20,
                           )
-                          // ListView(
-                          //   children: snapshot.data!.docs
-                          //       .map((DocumentSnapshot document) {
-                          //     Map<String, dynamic> data =
-                          //         document.data()! as Map<String, dynamic>;
-                          //     return ListTile(
-                          //       title: Text(data['titre']),
-                          //       subtitle: Text(data['description']),
-                          //     );
-                          //   }).toList(),
-                          // ),
                         ],
                       );
                     },

@@ -19,7 +19,7 @@ class AnnonceService {
       annonceMap.addAll({
         "userId": userUid,
         "userName": userDisplayName,
-        "creationDate": Timestamp.now(),
+        "creationDate": "",
       });
 
       await _firestore.collection("annonces").add(annonceMap);

@@ -4,6 +4,9 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:localads/screens/chat_screen_accueil.dart';
 import 'package:localads/screens/home_screen.dart';
 import 'package:localads/screens/profile_screen.dart';
+import 'package:localads/utilis/constant.dart';
+
+import 'Accueil_screen.dart';
 
 class Details extends StatelessWidget {
   const Details({super.key});
@@ -14,7 +17,7 @@ class Details extends StatelessWidget {
       Home_sceen(),
       Chat_screen(),
       Details(),
-      Profile(),
+      // Profile(),
     ];
     return Scaffold(
       floatingActionButton: Container(),
@@ -151,9 +154,8 @@ class Details extends StatelessWidget {
                       ),
                     ),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                          Color.fromARGB(255, 244, 54, 117)),
-                      iconColor: MaterialStatePropertyAll(Colors.white),
+                      backgroundColor: MaterialStateProperty.all(primaryColor),
+                      // : MaterialStateProperty.all(Colors.white),
                     ),
                   ),
                 ),
@@ -420,7 +422,7 @@ class Details extends StatelessWidget {
             label: 'Favoris',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_2),
+            icon: Icon(Icons.person),
             label: 'Compte',
           ),
         ],

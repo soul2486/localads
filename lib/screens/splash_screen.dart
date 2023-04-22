@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:localads/provider/auth_provider.dart';
+import 'package:localads/screens/Man.dart';
 import 'package:localads/screens/auth_screen.dart';
 import 'package:localads/screens/home_screen.dart';
 import 'package:localads/utilis/constant.dart';
@@ -9,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 
 import '../widgets/custom_button.dart';
+import 'Accueil_screen.dart';
 
 class Splashscreen extends StatefulWidget {
   Splashscreen({Key? key}) : super(key: key);
@@ -46,7 +48,7 @@ class _SplashscreenState extends State<Splashscreen> {
       //   },
       // );
       ap.getDataFromSp();
-      return HomeScreen();
+      return MyWidget();
       // ap.getDataFromSp().whenComplete(() => null);
     } else {
       return Getstart();

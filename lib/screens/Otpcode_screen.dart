@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:localads/provider/auth_provider.dart';
+import 'package:localads/screens/Man.dart';
 import 'package:localads/screens/home_screen.dart';
 import 'package:localads/screens/userinfo_screen.dart';
 import 'package:localads/utilis/constant.dart';
@@ -11,6 +12,8 @@ import 'package:localads/utilis/helpers.dart';
 import 'package:localads/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+
+import 'Accueil_screen.dart';
 
 class verificationScreen extends StatefulWidget {
   // final String phone;
@@ -63,7 +66,7 @@ class _verificationScreenState extends State<verificationScreen> {
                               (value) => Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: ((context) => HomeScreen()),
+                                    builder: ((context) => MyWidget()),
                                   ),
                                   (route) => false),
                             ),
